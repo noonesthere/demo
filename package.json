@@ -17,16 +17,17 @@
     "@tsconfig/svelte": "^5.0.8",
     "@types/node": "^24.12.3",
     "svelte-check": "^4.4.8",
+    "svelte5-router": "^3.1.0",
     "tailwind-scrollbar": "^4.0.2",
     "tailwindcss": "^4.2.2",
     "typescript": "~6.0.2",
     "vite": "^8.0.12"
   },
   "dependencies": {
-    "svelte": "^5.55.5",
-    "@codeborne/i18n-json": "^0.3.7"
+    "@codeborne/i18n-json": "^0.3.7",
+    "svelte": "^5.55.5"
   },
-    "browserslist": [
+  "browserslist": [
     "> 0.5%",
     "not dead"
   ]

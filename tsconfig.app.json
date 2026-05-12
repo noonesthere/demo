@@ -12,7 +12,9 @@
     "module": "esnext",
     "types": [
       "svelte",
-      "vite/client"
+      "vite/client",
+      "./src/shared/ArrayExtensions",
+      "./src/shared/globals"
     ],
     "noEmit": true,
     /**
@@ -23,7 +25,9 @@
      */
     "allowJs": true,
     "checkJs": true,
-    "moduleDetection": "force"
+    "moduleDetection": "force",
+    "ignoreDeprecations": "6.0",
+    "noImplicitAny": false
   },
   "include": [
     "src/**/*.ts",
