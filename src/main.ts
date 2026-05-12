@@ -1,9 +1,19 @@
-import { mount } from 'svelte'
+import './shared/ArrayExtensions'
 import './app.css'
+import api from 'src/api/api'
+import {initTranslations} from './i18n'
+import {initErrorHandlers} from './errorHandlers'
 import App from './App.svelte'
+import {initSession} from 'src/stores/auth'
+import type {AuthenticatedUser} from 'src/api/types'
+import {mount} from 'svelte'
 
-const app = mount(App, {
-  target: document.getElementById('app')!,
-})
+(async function() {
+  initErrorHandlers()
 
-export default app
+  const [auth] = await Promise.all([api.get('user').catch(() => null), initTranslations()])
+  if (auth) initSession(auth as AuthenticatedUser)
+
+  document.body.innerHTML = ''
+  mount(App, {target: document.body})
+}())
