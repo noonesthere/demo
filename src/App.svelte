@@ -1,23 +1,25 @@
 <script lang="ts">
-  import {t} from 'src/i18n'
-  import Toasts from './components/Toasts.svelte'
-  import NotFoundPage from './layout/NotFoundPage.svelte'
-  import HomePage from 'src/pages/HomePage.svelte'
-  import Spinner from 'src/components/Spinner.svelte'
-//   import MockEmailsPage from 'src/prototyping/emails/MockEmailsPage.svelte'
-//   import MockEmailNotifications from 'src/prototyping/emails/MockEmailNotifications.svelte'
-  import {Route, Router} from 'svelte5-router'
+  import { t } from "src/i18n";
+  import Toasts from "./components/Toasts.svelte";
+  import NotFoundPage from "./layout/NotFoundPage.svelte";
+  import HomePage from "src/pages/HomePage.svelte";
+  import LearningPage from "src/pages/LearningPage.svelte";
+  import Spinner from "src/components/Spinner.svelte";
+  //   import MockEmailsPage from 'src/prototyping/emails/MockEmailsPage.svelte'
+  //   import MockEmailNotifications from 'src/prototyping/emails/MockEmailNotifications.svelte'
+  import { Route, Router } from "svelte5-router";
 </script>
 
 <svelte:head>
   <title>{t.title}</title>
 </svelte:head>
 
-<Toasts/>
+<Toasts />
 
 <Router>
   <div class="App min-h-screen flex flex-col">
-    <Route path="/" component={HomePage}/>
+    <Route path="/" component={HomePage} />
+    <Route path="/learning" component={LearningPage} />
     <!-- <Route path="/samples/*path">
       {#snippet children(params)}
         {#await import('src/samples/SamplesPage.svelte')}
@@ -29,7 +31,7 @@
         {/await}
       {/snippet}
     </Route> -->
-    <Route component={NotFoundPage}/>
+    <Route component={NotFoundPage} />
 
     <!--  👇 Prototype only  -->
     <!-- <Route path="emails" component={MockEmailsPage}/>
